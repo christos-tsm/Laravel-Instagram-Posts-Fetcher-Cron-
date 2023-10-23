@@ -11,6 +11,15 @@ class PostController extends Controller
 
     public function fetchInstagramPosts()
     {
+        /**
+         * Sample Request URL 'https://graph.instagram.com/me?fields=id,username&access_token=IGQVJ...'
+         * 
+         * Sample Response : 
+         * {
+         *   "id": "17841405793187218",
+         *   "username": "jayposiris"
+         *  }
+         */
         $client = new Client();
         $response = $client->get('https://graph.instagram.com/me/media', [
             'query' => [

@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
+        /** Daily fetch */
         $schedule->call('App\Http\Controllers\PostController@fetchInstagramPosts')->daily();
     }
 
